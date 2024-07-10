@@ -22,7 +22,7 @@ public class Admin {
 	@OneToMany(mappedBy = "profAdmin", cascade = CascadeType.ALL)
 	private List<Professor> professors = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "courseAdmin")
+	@OneToMany(mappedBy = "courseAdmin", cascade = CascadeType.ALL)
 //	@JoinTable(name = "admin_course", joinColumns = @JoinColumn(referencedColumnName = "adminId"), inverseJoinColumns = @JoinColumn(referencedColumnName = "courseId"))
 	private List<Course> courses = new ArrayList<>();
 	

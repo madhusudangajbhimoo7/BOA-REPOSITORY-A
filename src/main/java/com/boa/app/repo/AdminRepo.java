@@ -11,6 +11,8 @@ import com.boa.app.entity.Admin;
 @Repository
 public interface AdminRepo extends JpaRepository<Admin, Integer>{
 
-	@EntityGraph(attributePaths = {"courses.registrations", "professors.students"})
-	List<Admin> findAll();
+	//@EntityGraph(attributePaths = {"courses.registrations", "professors.students"})
+//	List<Admin> findAll();
+	
+	Admin findFirstByAdminFullName(String name);
 }

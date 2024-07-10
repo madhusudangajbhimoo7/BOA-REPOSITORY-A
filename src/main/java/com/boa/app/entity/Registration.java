@@ -3,6 +3,7 @@ package com.boa.app.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +17,7 @@ public class Registration {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Course> courses = new ArrayList<>();
 
 	private String status;

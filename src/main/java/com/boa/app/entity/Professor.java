@@ -2,6 +2,7 @@ package com.boa.app.entity;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,7 +22,7 @@ public class Professor {
 	@ManyToMany
 	private List<Student> students;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Admin profAdmin;
 	
 	/**
