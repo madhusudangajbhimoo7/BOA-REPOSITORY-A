@@ -3,6 +3,7 @@ package com.boa.app.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Admin {
 	private String adminFullName;
 	
 	
-	@OneToMany(mappedBy = "profAdmin")
+	@OneToMany(mappedBy = "profAdmin", cascade = CascadeType.ALL)
 	private List<Professor> professors = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "courseAdmin")
